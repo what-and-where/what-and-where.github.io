@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 这是界面的默认设置 -->
+  <meta charset="utf-8">
+  <meta name="keywords" content="Object Search, embodied ai, VLMs">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What&Where</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- 这是作者和标题信息 -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">What&amp;Where: Cognition-Driven Object Search for <br> Persistent In-Home Agents with Vision-Language Models</h1>
+
+          <div class="publication-authors">
+            <span class="author-block">
+              <a href="">Anonymous</a>
+            </span>
+          </div>
+<!-- 这是论文信息 -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="论文链接"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+            
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/OS2507/WhatWhere"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code(Coming soon)</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+<!-- 摘要 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Object search is an essential skill for persistent in-home agents. However, this task is highly challenging due to the occasional ambiguity of natural language instructions and the open-ended environment. Existing solutions either adopt a single-run exploration strategy, which is ill-suited for persistent in-home agents, or rely on rigid language templates and additional semantic models which limit the agent's adaptability. We address this limitation and propose a method, coined What&amp;Where, that leverages vision-language models to equip agents with a cognitive perspective on what to search and where to search. What&amp;Where consists of two core components. The "what" component incorporates external knowledge to generate entity-associated images and summarizes functional attributes of the target, supporting instruction understanding and target assessment. The "where" component predicts the exploration zone from an accessible top-view and adjusts in response to planning feedback. Finally, guided by the "where" and "what" components, the agent alternately observes, reasons, and acts to perform local planning and complete the given task. Experiments on the ProcTHOR simulation platform demonstrate state-of-the-art performance of our approach, while real-world results highlight its strong transferability and generalizability.
+          </p>
+        </div>
+      </div>
+    </div>
+
+<!-- 方法 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Approach</h2>
+        <div class="content has-text-justified">
+          <p>
+            In the "what" path, the VLM acts as an imaginator and generates entity-associated images by prompting with external commonsense knowledge. Their functional attributes are then summarized to interpret the instruction. In the "where" path, the VLM acts as an explorer and infers the task-relevant exploration zone from the top-down map through a chain-of-question reasoning process. Finally, the VLM acts as an exploiter, leveraging both “what” and “where” reasoning to select the optimal cell and viewing direction, iteratively exploring until the FINISH output. During this process, each NEXT action updates the exploration zone.
+          </p>
+          <img src="./static/videos/framework.png" alt="framework" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+    </div>
+
+<!-- 演示 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Demo</h2>
+        <div class="content has-text-justified">
+          <p>
+            Real-world demonstrations across different types of daily demands and varying scene configurations.
+          </p>
+        </div>
+      </div>
+    </div>
+
+<!-- 第一行视频 -->
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <video controls width="100%">
+          <source src="./static/videos/1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="has-text-centered">Electronics-Demand</p>
+      </div>
+      
+      <div class="column is-two-thirds">
+        <video controls width="100%">
+          <source src="./static/videos/2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="has-text-centered">Container-Demand</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="is-size-7 has-text-centered">
+        <p>different demand types</p>
+      </div>
+    </div>
+
+<!-- 第二行视频 -->
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <video controls width="100%">
+          <source src="./static/videos/3.2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="has-text-centered">Read-Demand</p>
+      </div>
+      
+      <div class="column is-two-thirds">
+        <video controls width="100%">
+          <source src="./static/videos/3.1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="has-text-centered">Read-Demand under Varying Configurations</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="is-size-7 has-text-centered">
+        <p>Different scene configurations under identical instructions</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
