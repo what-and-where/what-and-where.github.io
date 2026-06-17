@@ -33,7 +33,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-3 publication-title">What&amp;Where: Cognition-Inspired Multi-VLM Collaboration <br> for Demand-Driven Dynamic Object Search</h1>
+          <h1 class="title is-3 publication-title">What&amp;Where: Demand-Driven Dynamic Object Search <br> via Vision-Language Model Collaboration</h1>
 
           <div class="publication-authors">
             <span class="author-block">
@@ -86,7 +86,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Object search is an essential skill for persistent in-home agents. However, this task is highly challenging due to the occasional ambiguity of natural language instructions and the open-ended environment. Existing solutions either adopt a single-run exploration strategy, which is ill-suited for persistent in-home agents, or rely on rigid language templates and additional semantic models which limit the agent's adaptability. We address this limitation and propose a method, coined What&amp;Where, that leverages vision-language models to equip agents with a cognitive perspective on what to search and where to search. What&amp;Where consists of two core components. The "what" component incorporates external knowledge to generate entity-associated images and summarizes functional attributes of the target, supporting instruction understanding and target assessment. The "where" component predicts the exploration zone from an accessible top-view and adjusts in response to planning feedback. Finally, guided by the "where" and "what" components, the agent alternately observes, reasons, and acts to perform local planning and complete the given task. Experiments on the ProcTHOR simulation platform demonstrate state-of-the-art performance of our approach, while real-world results highlight its strong transferability and generalizability.
+            Having robots find daily objects according to human demands is essential for intelligent domestic service. However, the underspecified identity of target objects in human high-level demand instructions, compounded by their lack of fixed locations across daily routines, introduces significant challenges to existing object search methods. This paper investigates demand-driven dynamic object search (D-DOS) for everyday household assistance. Accordingly, we propose What&amp;Where, a Vision-Language Model (VLM)-powered collaborative framework that explicitly considers what makes objects suitable for user demands and where the search should be prioritized in the environment. For ``what'' reasoning, the Demand Explicator interprets user demands into functional traits that desired objects should possess, enabling flexible target matching among diverse alternatives. For ``where'' reasoning, the Region Explorer grounds the search region in the global top-down view of the environment, while the Action Exploiter performs local search and revisits region selection as needed, enabling adaptive search in complex household environments. Experiments on the ProcTHOR simulator show that What&amp;Where consistently outperforms strong baselines in both success rate and task efficiency. Real-world evaluations further demonstrate its practical effectiveness in household service scenarios.
           </p>
         </div>
       </div>
@@ -100,7 +100,7 @@
         <h2 class="title is-3">Approach</h2>
         <div class="content has-text-justified">
           <p>
-            In the "what" path, the VLM acts as an imaginator and generates entity-associated images by prompting with external commonsense knowledge. Their functional attributes are then summarized to interpret the instruction. In the "where" path, the VLM acts as an explorer and infers the task-relevant exploration zone from the top-down map through a chain-of-question reasoning process. Finally, the VLM acts as an exploiter, leveraging both “what” and “where” reasoning to select the optimal cell and viewing direction, iteratively exploring until the FINISH output. During this process, each NEXT action updates the exploration zone.
+            Given high-level demand instructions, our framework employs VLMs as three specialized agents to collaboratively search for demand objects.
           </p>
           <img src="./static/videos/framework.png" alt="framework" style="max-width:100%; height:auto;">
         </div>
